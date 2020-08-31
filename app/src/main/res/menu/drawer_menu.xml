@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/register_super"
+            android:title="Login"
+            android:icon="@drawable/ic_supervisor_account_black_24dp"/>
+        <item android:id="@+id/login_super"
+            android:title="Register"
+            android:icon="@drawable/ic_supervisor_account_black_24dp"/>
+    </group>
+
+    <item android:title="MORE:">
+        <menu>
+            <item android:id="@+id/about_us_id"
+                android:icon="@drawable/ic_supervisor_account_black_24dp"
+                android:title="About Us"/>
+            <item android:id="@+id/contacts_id"
+                android:icon="@drawable/ic_supervisor_account_black_24dp"
+                android:title="Contact Us"/>
+            <item android:id="@+id/feed_back_id"
+                android:icon="@drawable/ic_supervisor_account_black_24dp"
+                android:title="Feedback"/>
+        </menu>
+
+
+
+    </item>
+
+</menu>
