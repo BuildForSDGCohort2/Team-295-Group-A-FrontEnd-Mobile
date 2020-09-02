@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.mancj.materialsearchbar.adapter.SuggestionsAdapter;
 
@@ -42,7 +44,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
 
@@ -55,6 +57,7 @@ public class UserActivity extends AppCompatActivity {
     private Geocoder geocoder;
     private TextView locationTv;
     private MaterialSearchBar searchBar;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
 
 
     @Override
@@ -63,14 +66,21 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+
         drawerLayout = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,
                 R.string.open_nav_drawer, R.string.close_nav_drawer);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
+
         locationTv = findViewById(R.id.location_tv);
         searchBar = findViewById(R.id.search_bar);
+        searchBar.setHint("Search Hospital Here");
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(UserActivity.this);
         geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
         checkLocationPermissions();
@@ -93,14 +103,9 @@ public class UserActivity extends AppCompatActivity {
 
             @Override
             public void onButtonClicked(int buttonCode) {
-                if (buttonCode == MaterialSearchBar.BUTTON_NAVIGATION) {
-                    drawerLayout.openDrawer(GravityCompat.START);
-
-                } else if (buttonCode == MaterialSearchBar.BUTTON_BACK) {
+                if (buttonCode == MaterialSearchBar.BUTTON_BACK) {
                     searchBar.disableSearch();
-
                 }
-
             }
         });
 
@@ -132,7 +137,7 @@ public class UserActivity extends AppCompatActivity {
 
             @Override
             public void OnItemDeleteListener(int position, View v) {
-                Log.d("TEXTCHANGED", "");
+                Log.d("TEXTCHANGED", "ITEM DELETED");
 
             }
         });
@@ -265,6 +270,35 @@ public class UserActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.login_super:
+                Log.d("YOUSELCTED", "SUPER");
+                break;
+            case R.id.register_super:
+                // Move to register screen
+                break;
+                default:
+                    break;
+        }
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle, if it returns
+        // true, then it has handled the app icon touch event
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        // Handle your other action bar items...
+
+        return super.onOptionsItemSelected(item);
+    }
 }
 
 
