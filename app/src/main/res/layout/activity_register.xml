@@ -109,6 +109,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-medium"
+            android:text="Create"
             android:textSize="20sp"
             android:textStyle="bold" />
 
