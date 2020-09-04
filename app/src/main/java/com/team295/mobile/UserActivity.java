@@ -275,6 +275,7 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
         switch(item.getItemId()) {
             case R.id.login_super:
                 Log.d("YOUSELCTED", "SUPER");
+                startActivity(new Intent(UserActivity.this, LoginActivity.class));
                 break;
             case R.id.register_super:
                startActivity(new Intent(UserActivity.this, RegisterActivity.class));
