@@ -38,29 +38,26 @@
             android:elevation="5dp"
             android:outlineProvider="bounds"
             app:mt_maxSuggestionsCount="10"
-            app:mt_navIconEnabled="true"
+            app:mt_navIconEnabled="false"
             app:mt_placeholder="Search Hospital Here"
             app:mt_speechMode="false" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Your Location:"
                 android:textAppearance="@style/ThemeOverlay.AppCompat.Light"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/location_tv"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="userLocation"
                 android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
