@@ -277,7 +277,7 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
                 Log.d("YOUSELCTED", "SUPER");
                 break;
             case R.id.register_super:
-                // Move to register screen
+               startActivity(new Intent(UserActivity.this, RegisterActivity.class));
                 break;
                 default:
                     break;
