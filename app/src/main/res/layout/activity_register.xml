@@ -14,19 +14,12 @@
         android:layout_margin="20dp"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/hospitallogo"
-             />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="New User! Create a new Account"
+            android:text="Create New Account"
             android:textColor="#372A2F"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -83,24 +76,49 @@
             android:id="@+id/Postal_Address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="Address"
-            android:layout_marginTop="5dp"
             android:inputType="textPostalAddress" />
 
-        <CheckBox
-            android:id="@+id/gMale"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Male" />
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/gFemale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Female" />
+            <TextView
+                android:id="@+id/payment_method_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:text="Gender:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RadioGroup
+                android:id="@+id/payment_method_rG"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/bank_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/mm_radio_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Female" />
+
+            </RadioGroup>
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn-SignUp"
@@ -114,8 +132,5 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>
