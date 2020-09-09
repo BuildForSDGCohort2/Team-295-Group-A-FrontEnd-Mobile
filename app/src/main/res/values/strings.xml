@@ -1,4 +1,5 @@
 <resources>
+
     <string name="welcome_to_findahospital">Welcome to FindaHospital</string>
     <string name="username">Username</string>
     <string name="register">register</string>
