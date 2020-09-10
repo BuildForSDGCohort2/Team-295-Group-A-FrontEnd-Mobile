@@ -5,8 +5,7 @@
     <string name="register">register</string>
     <string name="login">login</string>
     <string name="password">password</string>
-    <string name="app_name">FindaHospital</string>
     <string name="open_nav_drawer">Open Menu</string>
     <string name="close_nav_drawer">Close Menu</string>
-    <string name="hospitallogo">Logo</string>
+
 </resources>
