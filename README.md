@@ -11,3 +11,4 @@
 
 ## How the problem shall be solved
 -   Users shall be able to search for nearest hospitals by use of the installed app on their mobile devices.
+## Note
